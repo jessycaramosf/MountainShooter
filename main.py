@@ -11,4 +11,4 @@ while True:
     for event in pygame.event.get():
         print('Quiting...')
         pygame.quit() #Close Window
-        quit() # End Game.
+        quit() # End Game
