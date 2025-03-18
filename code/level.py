@@ -6,7 +6,7 @@ import pygame
 from pygame import Surface, Rect
 from pygame.font import Font
 
-from code.const import COLOR_WHITE, WIN_HEIGHT
+from code.const import COLOR_WHITE, WIN_HEIGHT, MENU_OPTION
 from code.entity import Entity
 from code.entityFactory import EntityFactory
 
@@ -18,13 +18,14 @@ class Level:
         self.game_mode = game_mode
         self.entity_list: list[Entity] = []
         self.entity_list.extend(EntityFactory.get_entity('Level1Bg'))
-        self.timeout = 20000
+        self.entity_list.append(EntityFactory.get_entity('Player1'))
+        self.timeout: 20000
 
     def run(self, ):
         menu_option = 0
         pygame.mixer_music.load(f'./asset/{self.name}.mp3')
         pygame.mixer_music.play(-1)
-        clock = pygame.time.Clock()  # garamtir que o código vai rodar no mesmo FPS
+        clock = pygame.time.Clock()  # garantir que o código vai rodar no mesmo FPS
         while True:
             clock.tick(60)
             for ent in self.entity_list:
