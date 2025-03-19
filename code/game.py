@@ -23,10 +23,6 @@ class Game:
                 level_return = level.run()
             elif menu_return == MENU_OPTION[4]:
                 pygame.quit()
-                quit() #end pygame
+                quit()  # end pygame
             else:
                 pass
-
-
-
-
