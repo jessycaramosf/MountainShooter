@@ -4,6 +4,8 @@ from abc import ABC, abstractmethod
 
 import pygame
 
+from code.const import ENTITY_HEALTH
+
 
 class Entity(ABC):  # Classe Abstrata
     def __init__(self, name: str, position: tuple):
@@ -12,6 +14,7 @@ class Entity(ABC):  # Classe Abstrata
         # e trata a imagem
         self.rect = self.surf.get_rect(left=position[0], top=position[1])
         self.speed = 0
+        self.health = ENTITY_HEALTH[self.name]
 
     @abstractmethod  # @ decorator
     def move(self, ):
